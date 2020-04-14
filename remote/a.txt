@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+    ServerAdmin admin@beautyangelsacademynederland.nl
+    ServerName beautyangelsacademynederland.nl
+    ServerAlias www.beautyangelsacademynederland.nl
+    DocumentRoot /var/www/beautyangelsacademynederland.nl/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
