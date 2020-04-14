@@ -6,7 +6,7 @@ then
     exit 1
 fi
 DOMAIN=$1
-mkdir -p /var/www/"$DOMAIN"/public_html
+sudo mkdir -p /var/www/"$DOMAIN"/public_html
 sudo chown -R $USER:$USER /var/www/"$DOMAIN"/public_html
 sudo chmod -R 755 /var/www
 sudo echo "hi" >> /var/www/"$DOMAIN"/public_html/index.html
