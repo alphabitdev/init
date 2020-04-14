@@ -17,7 +17,7 @@ echo "<VirtualHost *:80>
     DocumentRoot /var/www/$DOMAIN/public_html
     ErrorLog \${APACHE_LOG_DIR}/error.log
     CustomLog \${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>" >> sudo /etc/apache2/sites-available/"$DOMAIN".conf
+</VirtualHost>" | sudo tee /etc/apache2/sites-available/"$DOMAIN".conf
 sudo a2ensite "$DOMAIN".conf
 sudo a2dissite 000-default.conf
 sudo systemctl restart apache2
