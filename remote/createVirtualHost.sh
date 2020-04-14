@@ -9,8 +9,8 @@ DOMAIN=$1
 sudo mkdir -p /var/www/"$DOMAIN"/public_html
 sudo chown -R $USER:$USER /var/www/"$DOMAIN"/public_html
 sudo chmod -R 755 /var/www
-echo "hi" >> /var/www/"$DOMAIN"/public_html/index.html
-echo "<VirtualHost *:80>
+sudo echo "hi" >> /var/www/"$DOMAIN"/public_html/index.html
+sudo echo "<VirtualHost *:80>
     ServerAdmin admin@$DOMAIN
     ServerName $DOMAIN
     ServerAlias www.$DOMAIN

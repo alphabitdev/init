@@ -1,6 +1,14 @@
-sudo adduser alpha
-sudo usermod -aG sudo alpha
-su alpha
+#! /bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $(basename $0) USER KEY_URL"
+    exit 1
+fi
+USER=$1
+sudo adduser "$USER"
+sudo usermod -aG sudo "$USER"
+su "$USER"
 cd ~
 mkdir ~/.ssh
 chmod 700 ~/.ssh
