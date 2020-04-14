@@ -1,4 +1,11 @@
-DOMAIN="beautyangelsacademynederland.nl"
+#! /bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $(basename $0) DOMAIN"
+    exit 1
+fi
+DOMAIN=$1
 sudo mkdir -p /var/www/"$DOMAIN"/public_html
 sudo chown -R $USER:$USER /var/www/"$DOMAIN"/public_html
 sudo chmod -R 755 /var/www
