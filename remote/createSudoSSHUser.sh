@@ -14,12 +14,12 @@ fi
 USER=$1
 sudo adduser "$USER"
 sudo usermod -aG sudo "$USER"
-su "$USER"
-cd ~
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
+cd /home/"$USER"
+mkdir /home/"$USER"/.ssh
+touch /home/"$USER"/.ssh/authorized_keys
 wget https://raw.githubusercontent.com/alphabitdev/init/master/key.pub
-cat key.pub >> .ssh/authorized_keys
+cat key.pub >> /home/"$USER"/.ssh/authorized_keys
 rm key.pub
+chown -R "$USER":"$USER" /home/"$USER"/.ssh
+chmod 600 /home/"$USER"/.ssh/authorized_keys
+chmod 700 /home/"$USER"/.ssh
