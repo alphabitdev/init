@@ -5,6 +5,12 @@ then
     echo "Usage: $(basename $0) USER KEY_URL"
     exit 1
 fi
+if [ $# -ne 2 ]
+then
+    KEY_URL="https://raw.githubusercontent.com/alphabitdev/init/master/key.pub"
+else
+    KEY_URL=$2
+fi
 USER=$1
 sudo adduser "$USER"
 sudo usermod -aG sudo "$USER"
