@@ -21,3 +21,4 @@ echo "<VirtualHost *:80>
 sudo a2ensite "$DOMAIN".conf
 sudo a2dissite 000-default.conf
 sudo systemctl restart apache2
+certbot --apache -d "$DOMAIN" -d www."$DOMAIN"

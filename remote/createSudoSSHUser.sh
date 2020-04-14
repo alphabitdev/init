@@ -17,7 +17,7 @@ sudo usermod -aG sudo "$USER"
 cd /home/"$USER"
 mkdir /home/"$USER"/.ssh
 touch /home/"$USER"/.ssh/authorized_keys
-wget https://raw.githubusercontent.com/alphabitdev/init/master/key.pub
+wget "$KEY_URL"
 cat key.pub >> /home/"$USER"/.ssh/authorized_keys
 rm key.pub
 chown -R "$USER":"$USER" /home/"$USER"/.ssh
